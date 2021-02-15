@@ -1,17 +1,29 @@
 import styled from 'styled-components';
 
+import { generateMedia } from "styled-media-query";
+
+const customMedia = generateMedia({
+    lgDesktop: "1350px",
+    mdDesktop: "1150px",
+    tablet: '960px',
+    smtablet: "736px"
+});
+
 export const ContactSection = styled.div `
     padding: 50px 0;
-    text-align: center
+    text-align: center;
 `;
 
 export const ContactTitle = styled.h2 `
     font-size: 60px;
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    ${customMedia.lessThan('smtablet')`
+        font-size: 40px; 
+    `};
 `;
 
 export const Span = styled.span `
-    font-weight: normal
+    font-weight: normal;
 `;
 
 export const ContactForm = styled.form `
@@ -25,11 +37,11 @@ export const Input = styled.input `
     padding: 5px;
     margin-bottom: 10px;
     border: 0;
-    border: 1px solid #e4e4e4
+    border: 1px solid #e4e4e4;
 `;
 
 export const FormInput = styled.div `
-    overflow: hidden
+    overflow: hidden;
 `;
 
 export const InputText = styled(Input) `

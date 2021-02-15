@@ -32,12 +32,13 @@ class Work extends Component {
         })
 
         return (
-            <WorkSection>
-                <div className="container">
-                    <WorkTitle><TitleSpan>My</TitleSpan> Work</WorkTitle>
+             <div>
+                <WorkTitle style={{textAlign: 'center'}}><TitleSpan>My</TitleSpan> Work</WorkTitle>
+                <WorkSection>
                     {worksList}
-                </div>
-            </WorkSection>
+                    
+                </WorkSection>
+            </div>
         )
     }   
 }

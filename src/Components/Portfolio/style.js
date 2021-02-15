@@ -1,24 +1,44 @@
 import styled from "styled-components";
 
+import { generateMedia } from "styled-media-query";
+
+const customMedia = generateMedia({
+    lgDesktop: "1350px",
+    mdDesktop: "1150px",
+    tablet: '960px',
+    smtablet: "736px"
+});
+
 export const PortfolioSection = styled.div `
+    
     background: #f8f8f8;
     padding-top: 20px; 
     overflow: hidden;
-`;
+    ${customMedia.lessThan('smtablet')`
+        text-align: center;
+    `};
+    `;
 
 export const PortfolioTitle = styled.h2 `
     text-align: center;
-    font-size: 35px
-`;
+    font-size: 35px;
+    `;
 
 export const Span = styled.span `
-    font-weight: normal
-`;
+    font-weight: normal;
+    `;
 
 export const PortfolioUl = styled.ul `
     list-style: none;
     text-align: center;
-    margin: 20px 0
+    margin: 20px 0;
+
+    ${customMedia.lessThan('smtablet')`
+        display: grid;
+        flex-direction: column;
+        justify-content: center;
+        align-item: center;
+    `};
 `;
 
 export const PortfolioItem = styled.li `
@@ -29,19 +49,30 @@ export const PortfolioItem = styled.li `
     color: ${props => props.active ? '#fff' : ''};
 `;
 
+export const WrapperBox = styled.div ` 
+
+    ${customMedia.lessThan('smtablet')`
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    `};
+`;
+
 export const ImageWrapper = styled.div `
     width: 25%;
-    float: left;
+    float: right;
     font-size: 0;
     position: relative;
-
+    
+    ${customMedia.lessThan('smtablet')`
+        width: 100%;
+    `};
     &:hover > div {
         opacity: 1;
     }
 `;
 
 export const Image = styled.img `
-    width: 100%
+    width: 100%;
 `;
 
 export const Overlay = styled.div `
@@ -52,7 +83,7 @@ export const Overlay = styled.div `
     right: 0;
     background: rgba(235,84,36 , 0.5);
     font-size: 15px;
-    opacity: 0
+    opacity: 0;
 `;
 
 export const OverlaySpan = styled.span `

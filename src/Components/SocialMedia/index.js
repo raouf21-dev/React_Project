@@ -10,6 +10,7 @@ const SocialMedia = () => {
     },[])
     
     const socialData = social.map(socialItem => {
+
         return (
                 <Social item={socialItem.id} key={socialItem.id}>
                     <Icon className={socialItem.icon}></Icon>

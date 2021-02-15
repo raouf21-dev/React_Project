@@ -7,13 +7,13 @@ const FooterSection = styled.div `
 `;
 
 const FooterP = styled.p `
-    color: #888
+    color: #888;
 `;
 
 const Footer = () => {
     return (
         <FooterSection class="footer">
-            <FooterP> copyright &copy; 2021 by ultra profile </FooterP>
+            <FooterP> copyright &copy; 2021 by ultra Raouf </FooterP>
         </FooterSection>
     )
 }

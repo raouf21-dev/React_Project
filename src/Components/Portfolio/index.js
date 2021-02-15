@@ -1,6 +1,7 @@
 import React , {useState, useEffect} from 'react';
 import axios from 'axios';
-import {PortfolioSection, PortfolioTitle, Span, PortfolioUl, PortfolioItem, ImageWrapper, Image, Overlay, OverlaySpan} from './style.js'
+import {PortfolioSection, PortfolioTitle, Span, PortfolioUl, PortfolioItem, ImageWrapper, Image, Overlay, OverlaySpan, WrapperBox} from './style.js';
+
 const Portfolio = () => {
 
     const [images, setImages] = useState([]);
@@ -32,9 +33,9 @@ const Portfolio = () => {
                 <PortfolioItem>Mobile</PortfolioItem>
             </PortfolioUl>
             
-            <div class="box">
+            <WrapperBox class="ox">
                 {portfolioImages}
-            </div>
+            </WrapperBox>
         
     </PortfolioSection>
     )
